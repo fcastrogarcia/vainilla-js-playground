@@ -6,6 +6,7 @@ body {
   font-family: "Nunito", sans-serif;
   font-size: 1.3em;
   font-weight: 700;
+  background-image: linear-gradient(-225deg, #e3fdf5 0%, #ffe6fa 100%);
 }
 
 nav {
@@ -25,8 +26,10 @@ li {
   cursor: pointer;
   width: auto;
   text-align: center;
-  color: gray;
+  color: rgba(68, 68, 68, 0.5);
+  transition: all 0.15s ease;
 }
+
 li.active,
 :hover {
   color: #444444;
