@@ -7,24 +7,28 @@ const tabs_content = document.querySelectorAll(".tab-content");
 function selectTab(e) {
   if (e.type === "click") {
     selector.classList.remove("while-resizing");
-    tabs.forEach(tab => tab.classList.remove("active"));
-    tabs_content.forEach(tab => tab.classList.remove("show"));
     selected_tab = e.target.dataset.tab;
   }
   if (e.type === "resize") {
     selector.classList.add("while-resizing");
   }
   const tab = document.querySelector(`li[data-tab="${selected_tab}"]`);
-  const tab_content = document.querySelector(
-    `.tab-content[data-tab="${selected_tab}"]`
-  );
 
   const { left, width, top, height } = tab.getBoundingClientRect();
   selector.style.left = `${left}px`;
   selector.style.width = `${width}px`;
   selector.style.top = `${height + top}px`;
-  tab.classList.add("active");
-  tab_content.classList.add("show");
+
+  tabs.forEach((tab, index) =>
+    selected_tab - 1 === index
+      ? tab.classList.add("active")
+      : tab.classList.remove("active")
+  );
+  tabs_content.forEach((item, index) =>
+    selected_tab - 1 === index
+      ? item.classList.add("show")
+      : item.classList.remove("show")
+  );
 }
 
 //listeners
