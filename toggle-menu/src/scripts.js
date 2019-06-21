@@ -10,7 +10,11 @@ function toggleMenu() {
   menu.classList.toggle("toggle");
 }
 function selectOption(e) {
-  sections.forEach(section => section.classList.remove("selected-option"));
+  sections.forEach(section =>
+    section.classList.contains("selected-option")
+      ? section.classList.remove("selected-option")
+      : null
+  );
   selected = e.target.dataset.option;
   sections[selected - 1].classList.add("selected-option");
   toggleMenu();
