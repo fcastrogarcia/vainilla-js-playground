@@ -1,0 +1,118 @@
+$base-white: #fff;
+$carousel-width: (208px * 3) + (8px * 2 * 3);
+
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: #ebebeb;
+}
+.container {
+  margin: 3em auto;
+  height: 32em;
+  width: $carousel-width + 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.carousel-wrapper {
+  overflow: hidden;
+  margin: 0 auto;
+  height: 32em;
+  width: $carousel-width;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.carousel {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 100%;
+  display: flex;
+  position: absolute;
+  left: 0;
+  transition: all 0.5s ease;
+}
+.card {
+  margin: 0 8px 16px;
+  height: 16em;
+  width: 13em;
+  min-width: 13em;
+  border-radius: 4px;
+  display: inline-block;
+  background: $base-white;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1), 0 -1px 2px 0 rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.1s ease-out;
+
+  // &:hover {
+  //   box-shadow: 0 7px 16px 0 rgba(0, 0, 0, 0.2), 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  //   transform: scaleY(1.1);
+  //   transform-origin: top;
+  // }
+}
+button {
+  display: none;
+  position: absolute;
+  height: 64px;
+  width: 64px;
+  border-radius: 50%;
+  outline: none;
+  border: none;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.19);
+  transition: box-shadow 0.1s ease-out;
+  background-color: $base-white;
+
+  &:hover {
+    box-shadow: 0 7px 16px 0 rgba(0, 0, 0, 0.2), 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  }
+  &::after,
+  &::before {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 14px;
+    background: #3483fa;
+    position: absolute;
+    left: 50%;
+    margin-left: -8px;
+  }
+  &[data-action="slide-left"] {
+    align-self: flex-start;
+    left: 12px;
+
+    &::after {
+      transform: rotate(45deg);
+      bottom: 50%;
+      margin-bottom: -6px;
+    }
+    &::before {
+      transform: rotate(-45deg);
+      top: 50%;
+      margin-top: -5px;
+    }
+  }
+  &[data-action="slide-right"] {
+    align-self: flex-end;
+    right: 12px;
+
+    &::after {
+      transform: rotate(-45deg);
+      bottom: 50%;
+      margin-bottom: -6px;
+      margin-left: -6px;
+    }
+    &::before {
+      transform: rotate(45deg);
+      top: 50%;
+      margin-top: -5px;
+      margin-left: -6px;
+    }
+  }
+}
