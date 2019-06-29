@@ -45,17 +45,22 @@ body {
   width: 13em;
   min-width: 13em;
   border-radius: 4px;
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: $base-white;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1), 0 -1px 2px 0 rgba(0, 0, 0, 0.1);
   cursor: pointer;
   transition: all 0.1s ease-out;
-
   // &:hover {
   //   box-shadow: 0 7px 16px 0 rgba(0, 0, 0, 0.2), 0 1px 3px 0 rgba(0, 0, 0, 0.1);
   //   transform: scaleY(1.1);
   //   transform-origin: top;
   // }
+  & p {
+    font-size: 25px;
+    font-family: "Source Sans Pro", sans-serif;
+  }
 }
 button {
   display: none;
