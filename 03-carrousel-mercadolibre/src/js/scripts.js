@@ -35,7 +35,7 @@ function slideRight() {
     carousel.style.transform = `translateX(-${offset}px)`;
   }
   //si quedan menos de 3 cards se suma la width y margen de las cards que queden(1 o 2)
-  if (cards_left < 3 && cards_left > 0) {
+  if (cards_left < 3) {
     offset += cards_left * card_width + cards_left * 8 * 2; //8 son los pixeles del right y left margin
     carousel.style.transform = `translateX(-${offset}px)`;
   }
@@ -47,10 +47,8 @@ function slideRight() {
 function slideLeft() {
   //esta variable indica las cards que quedan pero volviendo desde el final del carousel
   let cards_backwards = total_cards - cards_left - 3;
-  if (offset === 0) {
-    return;
-    //si quedan menos de 3 cards se resetea el offset y vuelve al principio
-  } else if (cards_backwards <= 3) {
+  //si quedan menos de 3 cards se resetea el offset y vuelve al principio
+  if (cards_backwards <= 3) {
     offset = 0;
     carousel.style.transform = `translateX(-${offset})`;
     //si quedan más de 3 cards se le da una vuelta entera al carousel

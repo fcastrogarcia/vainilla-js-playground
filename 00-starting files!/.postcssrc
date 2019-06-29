@@ -1,7 +1,5 @@
 {
   "plugins": {
-    "autoprefixer": {
-      "flexbox":true
-    }
+    "autoprefixer": true
   }
 }
