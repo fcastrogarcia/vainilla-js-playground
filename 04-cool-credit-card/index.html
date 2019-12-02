@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Title</title>
+    <link rel="stylesheet" href="src/scss/main.scss" />
+  </head>
+  <body>
+    <main>
+      <!-- credit card form -->
+      <form>
+        <div class="form-field">
+          <h2>Enter your card information</h2>
+        </div>
+        <div class="form-field">
+          <label for="name" maxLength="20">Name</label>
+          <input class="front" id="name" type="text" />
+        </div>
+        <div class="form-field">
+          <label for="cardnumber">Card Number</label>
+          <input class="front" id="cardnumber" pattern="[0-9]*" type="text" />
+        </div>
+        <div class="form-field">
+          <label for="expiration">Expiration</label>
+          <input class="front" id="expiration" type="text" />
+        </div>
+        <div class="form-field">
+          <label for="securitycode">CVV</label>
+          <input id="cvv" pattern="[0-9]*" type="text" maxlength="4" />
+        </div>
+      </form>
+      <!-- credit card -->
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">
+            <p>Frente</p>
+          </div>
+          <div class="card-back">
+            <p>Trasero</p>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="src/js/scripts.js"></script>
+  </body>
+</html>

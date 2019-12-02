@@ -1,0 +1,37 @@
+$card-height: 250px;
+
+.card {
+  background-color: transparent;
+  width: calc(#{$card-height} * 1.57);
+  height: $card-height;
+  perspective: 1000px;
+}
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  &.flip {
+    transform: rotateY(180deg);
+  }
+}
+.card-front,
+.card-back {
+  border-radius: 10px;
+  box-shadow: $shadow-md;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+.card-front {
+  background-color: #bbb;
+  color: black;
+}
+.card-back {
+  background-color: dodgerblue;
+  color: white;
+  transform: rotateY(180deg);
+}

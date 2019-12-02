@@ -1,0 +1,48 @@
+form {
+  display: grid;
+  width: auto;
+  height: 330px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    "title title"
+    "name name"
+    "cardnumber cardnumber"
+    "expiration cvv";
+  gap: 10px 20px;
+  box-shadow: $base-shadow;
+  padding: 40px;
+  border-radius: 20px;
+  background: #fff;
+}
+.form-field {
+  display: flex;
+  flex-direction: column;
+}
+.form-field:nth-child(1) {
+  grid-area: title;
+}
+.form-field:nth-child(2) {
+  grid-area: name;
+}
+.form-field:nth-child(3) {
+  grid-area: cardnumber;
+}
+.form-field:nth-child(4) {
+  grid-area: expiration;
+}
+.form-field:nth-child(5) {
+  grid-area: cvv;
+}
+input {
+  height: 40px;
+  border-radius: 4px;
+  border: 1px solid $text-gray-400;
+  margin-top: 6px;
+}
+label {
+  color: $text-gray-600;
+}
+h2 {
+  color: $text-gray-700;
+}

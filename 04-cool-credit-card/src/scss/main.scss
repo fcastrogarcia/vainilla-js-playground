@@ -1,0 +1,22 @@
+@import "abstracts/mixins";
+@import "abstracts/variables";
+@import "components/card";
+@import "components/form";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  width: 100vw;
+  height: 100vh;
+  @include flexContainer;
+  justify-content: space-evenly;
+  background: #edf2f7;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
