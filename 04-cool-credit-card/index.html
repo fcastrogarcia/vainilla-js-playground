@@ -3,7 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Title</title>
+    <title>Cool Credit Card</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Handlee|Kalam|Neucha|Patrick+Hand&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="src/scss/main.scss" />
     <script type="module" src="src/js/app.js"></script>
   </head>
@@ -41,6 +45,7 @@
       <div class="card">
         <div class="card__inner">
           <div class="card__front">
+            <div class="card__field chip"></div>
             <div class="card__field" id="logo"></div>
             <div class="card__field" id="card-cardnumber">
               **** **** **** ****
@@ -55,7 +60,10 @@
           </div>
           <div class="card__back">
             <div class="card__field"></div>
-            <div class="card__field" id="card-cvv"></div>
+            <div class="card__field" id="signature-field">
+              <div class="card__signature"></div>
+              <div id="card-cvv" class="card__cvv"></div>
+            </div>
             <div class="card__field"></div>
             <div class="card__field"></div>
           </div>
