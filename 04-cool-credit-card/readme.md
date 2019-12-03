@@ -5,4 +5,4 @@
 <li>SCSS</li>
 <li>Grids</li>
 </ul>
-<a href="https://codesandbox.io/s/cool-credit-card-3fstb" target="_blank">CodeSandbox</a>
+<a href="https://3fstb.csb.app/" target="_blank">CodeSandbox</a>
