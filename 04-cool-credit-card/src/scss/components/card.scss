@@ -6,32 +6,87 @@ $card-height: 250px;
   height: $card-height;
   perspective: 1000px;
 }
-.card-inner {
+.card__inner {
   position: relative;
   width: 100%;
   height: 100%;
   text-align: center;
   transition: transform 0.8s;
   transform-style: preserve-3d;
-  &.flip {
+  &.--flip {
     transform: rotateY(180deg);
   }
 }
-.card-front,
-.card-back {
-  border-radius: 10px;
+.card__front,
+.card__back {
+  font-family: monospace;
+  text-transform: uppercase;
+  border-radius: 15px;
   box-shadow: $shadow-md;
   position: absolute;
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
+  background-color: $text-gray-400;
 }
-.card-front {
-  background-color: #bbb;
-  color: black;
+.card__field {
+  color: $text-gray-900;
+  font-size: 1.2rem;
 }
-.card-back {
-  background-color: dodgerblue;
+.card__front {
+  @include gridContainer;
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+  grid-template-areas:
+    ". . logo"
+    "cardnumber cardnumber cardnumber"
+    "name name expires";
+
+  & > .card__field {
+    &:nth-child(1) {
+      padding: 0;
+      grid-area: logo;
+      justify-self: end;
+    }
+    &:nth-child(2) {
+      grid-area: cardnumber;
+      font-size: 1.5rem;
+    }
+    &:nth-child(3) {
+      grid-area: name;
+    }
+    &:nth-child(4) {
+      position: relative;
+      grid-area: expires;
+    }
+  }
+}
+.valid-thru {
+  font-size: 0.6rem;
+  margin-bottom: 2px;
+}
+.card__logo {
+  font-size: 1rem;
+  width: 5em;
+  height: 4em;
+  margin-right: 1em;
+}
+.--sm-logo {
+  width: 4em;
+  height: 4em;
+}
+.card__back {
+  @include gridContainer;
+  grid-template: repeat(4, 1fr) / 1fr;
   color: white;
   transform: rotateY(180deg);
+  justify-items: stretch;
+  align-items: stretch;
+  overflow: hidden;
+  padding: 17px 0;
+  box-sizing: border-box;
+  & .card__field {
+    &:first-child {
+      background: #000;
+    }
+  }
 }

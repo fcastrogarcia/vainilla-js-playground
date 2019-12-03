@@ -1,9 +1,7 @@
 form {
   display: grid;
-  width: auto;
   height: 330px;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template: repeat(4, 1fr) / repeat(2, 1fr);
   grid-template-areas:
     "title title"
     "name name"
@@ -15,30 +13,34 @@ form {
   border-radius: 20px;
   background: #fff;
 }
-.form-field {
+.form__field {
   display: flex;
   flex-direction: column;
-}
-.form-field:nth-child(1) {
-  grid-area: title;
-}
-.form-field:nth-child(2) {
-  grid-area: name;
-}
-.form-field:nth-child(3) {
-  grid-area: cardnumber;
-}
-.form-field:nth-child(4) {
-  grid-area: expiration;
-}
-.form-field:nth-child(5) {
-  grid-area: cvv;
+  &:nth-child(1) {
+    grid-area: title;
+  }
+  &:nth-child(2) {
+    grid-area: name;
+  }
+  &:nth-child(3) {
+    grid-area: cardnumber;
+  }
+  &:nth-child(4) {
+    grid-area: expiration;
+  }
+  &:nth-child(5) {
+    grid-area: cvv;
+  }
 }
 input {
   height: 40px;
   border-radius: 4px;
   border: 1px solid $text-gray-400;
   margin-top: 6px;
+  font-family: "Roboto", sans-serif;
+  color: $text-gray-800;
+  font-size: 1rem;
+  padding-left: 10px;
 }
 label {
   color: $text-gray-600;

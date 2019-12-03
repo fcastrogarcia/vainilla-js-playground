@@ -1,5 +1,12 @@
-@mixin flexContainer {
-  display: flex;
+@mixin center {
   align-items: center;
   justify-content: center;
+}
+@mixin flexContainer {
+  display: flex;
+  @include center;
+}
+@mixin gridContainer {
+  display: grid;
+  @include center;
 }

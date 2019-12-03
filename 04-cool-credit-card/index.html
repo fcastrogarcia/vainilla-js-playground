@@ -5,43 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Title</title>
     <link rel="stylesheet" href="src/scss/main.scss" />
+    <script type="module" src="src/js/app.js"></script>
   </head>
   <body>
     <main>
       <!-- credit card form -->
       <form>
-        <div class="form-field">
+        <div class="form__field">
           <h2>Enter your card information</h2>
         </div>
-        <div class="form-field">
-          <label for="name" maxLength="20">Name</label>
-          <input class="front" id="name" type="text" />
+        <div class="form__field">
+          <label for="name">Name</label>
+          <input class="front" maxlength="20" id="name" type="text" />
         </div>
-        <div class="form-field">
+        <div class="form__field">
           <label for="cardnumber">Card Number</label>
-          <input class="front" id="cardnumber" pattern="[0-9]*" type="text" />
+          <input
+            class="front"
+            maxlength="19"
+            id="cardnumber"
+            pattern="[0-9]*"
+            type="text"
+          />
         </div>
-        <div class="form-field">
+        <div class="form__field">
           <label for="expiration">Expiration</label>
-          <input class="front" id="expiration" type="text" />
+          <input class="front" id="expiration" type="text" maxlength="5" />
         </div>
-        <div class="form-field">
+        <div class="form__field">
           <label for="securitycode">CVV</label>
           <input id="cvv" pattern="[0-9]*" type="text" maxlength="4" />
         </div>
       </form>
       <!-- credit card -->
       <div class="card">
-        <div class="card-inner">
-          <div class="card-front">
-            <p>Frente</p>
+        <div class="card__inner">
+          <div class="card__front">
+            <div class="card__field" id="logo"></div>
+            <div class="card__field" id="card-cardnumber">
+              **** **** **** ****
+            </div>
+            <div class="card__field" id="card-name">
+              john doe
+            </div>
+            <div class="card__field">
+              <div class="valid-thru">valid thru</div>
+              <div id="card-expiration">00/00</div>
+            </div>
           </div>
-          <div class="card-back">
-            <p>Trasero</p>
+          <div class="card__back">
+            <div class="card__field"></div>
+            <div class="card__field" id="card-cvv"></div>
+            <div class="card__field"></div>
+            <div class="card__field"></div>
           </div>
         </div>
       </div>
     </main>
-    <script src="src/js/scripts.js"></script>
   </body>
 </html>

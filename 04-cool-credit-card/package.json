@@ -11,7 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "autoprefixer": "^9.7.3",
-    "cleave.js": "^1.5.3"
+    "cleave.js": "^1.5.3",
+    "payment-icons": "^1.2.1"
   },
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.11.2",
