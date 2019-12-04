@@ -13,6 +13,11 @@ $card-height: 250px;
     width: 90vw;
     height: calc(90vw / 1.57);
   }
+  @media (hover: hover) {
+    &:hover .card__inner {
+      transform: rotateY(180deg);
+    }
+  }
 }
 .card__inner {
   position: relative;

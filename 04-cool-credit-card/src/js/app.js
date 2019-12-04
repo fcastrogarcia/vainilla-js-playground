@@ -30,9 +30,7 @@ function handleInputs(e) {
     numbersToUnveil = 19 - value.length;
     text = value + "*".repeat(numbersToUnveil);
     text = text.split("");
-    whitespaceAtIndex.forEach(index => {
-      text.splice(index, 1, " ");
-    });
+    whitespaceAtIndex.forEach(index => text.splice(index, 1, " "));
     cardnumber.innerHTML = text.join("");
   } else {
     document.getElementById(`card-${id}`).innerHTML = value;
@@ -50,5 +48,4 @@ frontFields.forEach(field =>
   field.addEventListener("focus", handleFrontFieldsFocus)
 );
 formInputs.forEach(input => input.addEventListener("input", handleInputs));
-card.addEventListener("mouseenter", handleCardClick);
-card.addEventListener("mouseleave", handleCardClick);
+card.addEventListener("click", handleCardClick);
