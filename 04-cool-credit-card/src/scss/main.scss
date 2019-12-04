@@ -9,11 +9,17 @@
 }
 main {
   width: 100vw;
-  height: 100vh;
+  max-width: 100%;
+  min-height: 100vh;
+  max-height: 100%;
   @include flexContainer;
   justify-content: space-evenly;
   background: $text-gray-100;
   flex-wrap: wrap-reverse;
+  @media (max-width: 600px) {
+    min-height: 110vh;
+    // padding: 20px 0;
+  }
 }
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
@@ -23,4 +29,9 @@ body {
     monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  background: $text-gray-100;
+  @media (max-width: 768px) {
+    padding: 20px 0;
+  }
 }

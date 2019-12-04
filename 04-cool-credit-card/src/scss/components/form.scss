@@ -12,6 +12,12 @@ form {
   padding: 40px;
   border-radius: 20px;
   background: #fff;
+  justify-content: center;
+  @media (max-width: 600px) {
+    max-width: 90vw;
+    padding: 25px;
+    margin: 5px;
+  }
 }
 .form__field {
   display: flex;
@@ -31,6 +37,12 @@ form {
   &:nth-child(5) {
     grid-area: cvv;
   }
+  @media (max-width: 600px) {
+    &:nth-child(4),
+    &:nth-child(5) {
+      max-width: 35vw;
+    }
+  }
 }
 input {
   height: 40px;
@@ -47,4 +59,7 @@ label {
 }
 h2 {
   color: $text-gray-700;
+  @media (max-width: 600px) {
+    font-size: 5vw;
+  }
 }

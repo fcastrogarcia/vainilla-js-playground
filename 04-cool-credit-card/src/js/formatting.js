@@ -1,9 +1,11 @@
 import Cleave from "cleave.js";
-import { visa, mastercard, maestro, diners, amex } from "./cardIcons";
+import { singleIcons, monoIcons } from "./cardIcons";
 
 export default () => {
   const logo = document.getElementById("logo");
+  const backLogo = document.querySelector(".card__field.--back-logo");
 
+  const { visa, mastercard, maestro, diners, amex } = singleIcons;
   // card number formatting
   new Cleave("#cardnumber", {
     creditCard: true,
@@ -11,21 +13,27 @@ export default () => {
       switch (type) {
         case "visa":
           logo.innerHTML = visa;
+          backLogo.innerHTML = monoIcons.visa;
           break;
         case "mastercard":
           logo.innerHTML = mastercard;
+          backLogo.innerHTML = monoIcons.mastercard;
           break;
         case "maestro":
           logo.innerHTML = maestro;
+          backLogo.innerHTML = monoIcons.maestro;
           break;
         case "diners":
           logo.innerHTML = diners;
+          backLogo.innerHTML = monoIcons.diners;
           break;
         case "amex":
           logo.innerHTML = amex;
+          backLogo.innerHTML = monoIcons.amex;
           break;
         default:
           logo.innerHTML = "";
+          backLogo.innerHTML = "";
       }
     }
   });
