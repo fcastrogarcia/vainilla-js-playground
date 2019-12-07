@@ -3,7 +3,7 @@ formatting();
 
 const card = document.querySelector(".card");
 const cvv = document.querySelector("#cvv");
-const frontFields = document.querySelectorAll(".front");
+const frontFields = document.querySelectorAll('[data-side="front"]');
 const cardInner = document.querySelector(".card__inner");
 const formInputs = document.querySelectorAll(".form__field input");
 const signature = document.querySelector(".card__signature");
